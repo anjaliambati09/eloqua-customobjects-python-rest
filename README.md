@@ -24,6 +24,10 @@
         
 ## Run puthon program with below commands
         
-   ### For python 3
+   ### For python 3 use below command
         
         python3 get_customObjects.py
+        
+   ### For python 2.7 use below command
+        
+        python get_customObjects.py
