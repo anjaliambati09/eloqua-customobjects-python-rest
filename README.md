@@ -21,3 +21,9 @@
         replace with
         
         response = request.get('/data/customObject/2073', None)
+        
+## Run puthon program with below commands
+        
+        for python 3::::::::::
+        
+        python3 get_customObjects.py
