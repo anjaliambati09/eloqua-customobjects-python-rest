@@ -1,13 +1,13 @@
 import base64
-import urllib
-import urllib2
+import urllib.request, urllib.parse, urllib.error
+import urllib.request, urllib.error, urllib.parse
 
-class EloquaRequest(urllib2.Request):
+class EloquaRequest(urllib.request.Request):
     headers = ''
     base_url = 'https://secure.p01.eloqua.com/api/REST/2.0/'
 
     def __init__(self, site, user, password):
-        authKey = base64.b64encode(site + "\\" + user + ":" + password)
+        authKey = base64.b64encode(bytes(site + "\\" + user + ":" + password, 'utf-8')).decode('ascii')
         self.headers = {"Content-Type":"application/json", "Authorization":"Basic " + authKey}
 
     def get(self, url, data):
@@ -23,14 +23,14 @@ class EloquaRequest(urllib2.Request):
         return self.request('DELETE', url, data)
 
     def request(self, method, url, data):
-        request_object = urllib2.Request(self.base_url + url)
+        request_object = urllib.request.Request(self.base_url + url)
         request_object.get_method = lambda: method
 
-        for key,value in self.headers.items():
+        for key,value in list(self.headers.items()):
           request_object.add_header(key,value)
 
         if data != None:
-          data = urllib.urlencode(data)
+          data = urllib.parse.urlencode(data)
 
-        response = urllib2.urlopen(request_object, data)
+        response = urllib.request.urlopen(request_object, data)
         return response.read()
