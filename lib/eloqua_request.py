@@ -4,7 +4,7 @@ import urllib2
 
 class EloquaRequest(urllib2.Request):
     headers = ''
-    base_url = 'https://secure.eloqua.com/API/REST/1.0'
+    base_url = 'https://secure.p01.eloqua.com/api/REST/2.0/'
 
     def __init__(self, site, user, password):
         authKey = base64.b64encode(site + "\\" + user + ":" + password)
