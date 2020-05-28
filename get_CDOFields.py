@@ -9,7 +9,7 @@ import glob
 sys.path.append('./lib')
 from eloqua_request import EloquaRequest
 
-request = EloquaRequest('site', 'user', 'password')
+request = EloquaFieldRequest('site', 'user', 'password')
 
 input_CDO_file = sys.argv[1]
 output_CDO_file = sys.argv[2]
