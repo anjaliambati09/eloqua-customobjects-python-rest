@@ -9,7 +9,7 @@ import glob
 sys.path.append('./lib')
 from eloqua_request import EloquaRequest
 
-request = EloquaFieldRequest('site', 'user', 'password')
+request = EloquaRequest('site', 'user', 'password')
 
 input_CDO_file = sys.argv[1]
 output_CDO_file = sys.argv[2]
@@ -27,7 +27,7 @@ print(result_t)
 
 for id in result_t: 
     print(id)
-    url = '/customObjects/'+ id +'/fields'
+    url = '/bulk/2.0/customObjects/'+ id +'/fields'
     response = request.get(url, None)
 #    print(response)
     JSON_object = json.dumps(response.decode('utf-8'))
