@@ -1,7 +1,7 @@
 # eloqua-customfields-python-rest
 
 
-## you put in the below information in get_customObjects.py
+## you put in the below information in get_CDOFields.py
         1.site: Replace with Eloqua instance name
         2.user: Replace with Eloqua username
         3.password: Replace with Eloqua password
@@ -17,11 +17,9 @@
         
    ### For python 3 use below command
         
-        python3 get_customObjects.py
+        python3 get_CDOFields.py.py <input-excel-file.xlsx> <output-excel-file.xlsx>
+    eg: python3 get_CDOFields.py.py customObjects.xlsx customFields.xlsx
         
-   ### For python 2.7 use below command
-        
-        python get_customObjects.py
 
 # eloqua-customobjects-python-rest
 
