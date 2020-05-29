@@ -17,8 +17,8 @@
         
    ### For python 3 use below command
         
-        python3 get_CDOFields.py.py <input-excel-file.xlsx> <output-excel-file.xlsx>
-    eg: python3 get_CDOFields.py.py customObjects.xlsx customFields.xlsx
+        python3 get_CDOFields.py <input-excel-file.xlsx> <output-excel-file.xlsx>
+    eg: python3 get_CDOFields.py customObjects.xlsx customFields.xlsx
         
 
 # eloqua-customobjects-python-rest
